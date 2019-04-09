@@ -1,21 +1,15 @@
+# Fork README
+I forked this with the intent to make a whitelist for iOS that would send any non-contact incoming phone call to voicemail.  Unfortunately it seems that Apple's CallKit doesn't allow you to do this.  The API requires you to query a blacklist in order to block a call (and adding all possible numbers except for contacts to this blacklist would make the list too big).
+
+It's not too surprising this is the case since I'd expect a whitelist app to exist already if it wasn't, but it's too bad since an iOS whitelist would immediately solve the call spam problem.
+
+I'd have two features in addition to the whitelist:
+ - Option to allow any incoming call for the next 20min (for uber, doordash etc.)
+ - Option to allow the second call from the same number to ring through.
+ 
+ This would solve 99% of issues where you need an unknown number to ring your phone.
+
 # OpenCallBlock
-
-[![Build Status](https://travis-ci.org/chrisballinger/OpenCallBlock.svg?branch=master)](https://travis-ci.org/chrisballinger/OpenCallBlock)
-
-🚨🚧 **Under Construction** 🚧🚨
-
-OpenCallBlock is a very simple iOS app that utilizes CallKit for blocking of NPA-NXX spam. This is a type of phone spam when you receive calls from numbers that look very similar to your own phone number. Spammers spoof those numbers in the hope you think that it's someone from your hometown.
-
-There are a number of free and paid apps that promise to block this kind of spam, but they all seem to want to harvest your contacts and personal information for advertising purposes.
-
-This app simply takes a US phone number like 800-555-5555, extracts the NPA-NXX prefix (e.g. 800-555), and then generates a blocklist of every number from 800-555-0000 to 800-555-9999. You can grant access to your contacts and automatically whitelist people you already know, or enter them manually. **No personal data ever leaves your device.**
-
-For it to work you must enable the extension after installation:
-
-* Settings => Phone => Call Blocking & Identification => Enable OpenCallBlock
-
-Requires iOS 10 or higher.
-
 ### License
 
 MPL 2.0 [FAQ](https://www.mozilla.org/en-US/MPL/2.0/FAQ/)
